@@ -33,16 +33,78 @@ float porcentagem (float a, float b){
 int funcaoMatematica(int x, int y){
     return ((x*x)+(y*y) - 6*(x*y) -1);
 }
+int troca(int &a, int &b){
+    int aux= a;
+    a=b;
+    b=aux;
+
+   return 0;
+}
+
+void verificaPar_Impar(int x){
+    if(x%2 ==0){
+        cout<<"Par!"<<endl;
+    }else{
+        cout<<"Impar!"<<endl;
+    }
+    
+}
+
+int soma_angulos(int a, int b, int c){
+    soma= a+b+c;
+    
+    return soma;
+}
+
+bool checarValid(int soma){
+    if(soma == 180){
+        return 1;
+    }
+        return 0;
+    
+}
+
+
 
 int main() {
-    int x,y;
-    x=0;
-    y=0;
-    cout<<"Digite o valor de X: ";
-    cin>> x;
-    cout<<"Digite o valor de Y: ";
-    cin>>y;
-    cout<<"O resultado da funcao x^2 + y^2 - 6xy -1 eh: "<<funcaoMatematica(x,y)<<endl;
+    int a, b,c;
+    cout<<"Informe o angulo a : ";
+    cin>>a;
+    cout<<"Informe o angulo b : ";
+    cin>>b;
+    cout<<"Informe o angulo c :";
+    cin>>c;
+    
+    int resp =soma_angulos(a,b,c);
+    if(checarValid(resp));
+    
+    
+    
+    //int num = 0;
+    //cout<<"Digite um numero : ";
+    //cin>> num;
+    //verificaPar_Impar(num);
+    
+   // int x,y,teste;
+   // x=0;
+   // y=0;
+   
+    //cout<<"Informe um numero : ";
+    //cin>>x;
+    //cout<<"Informe outro numero : ";
+    //cin>>y;
+    //if(x<y){
+       // troca(x,y);
+   // }
+    //cout << "Troca --> a: " << x <<" -->b: "<< y <<endl;
+    
+    
+    
+   //cout<<"Digite o valor de X: ";
+    //cin>> x;
+   // cout<<"Digite o valor de Y: ";
+    //cin>>y;
+   //cout<<"O resultado da funcao x^2 + y^2 - 6xy -1 eh: "<<funcaoMatematica(x,y)<<endl;
     //float custoFabrica = 0.0;
     //float percentualDistribuidor = 0.0;
     //float percentualImpostos = 0.0;
