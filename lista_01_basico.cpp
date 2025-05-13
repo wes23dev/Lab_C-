@@ -50,11 +50,11 @@ void verificaPar_Impar(int x){
     
 }
 
-int soma_angulos(int a, int b, int c){
-    soma= a+b+c;
+//int soma_angulos(int a, int b, int c){
+    //soma= a+b+c;
     
-    return soma;
-}
+    //return soma;
+//}
 
 bool checarValid(int soma){
     if(soma == 180){
@@ -64,19 +64,82 @@ bool checarValid(int soma){
     
 }
 
+float precoLuz(int kW){
+    float custo;
+    float custoFinal;
+    if(kW <= 100){
+    custo = kW * 0.5;
+    }else if (kW > 100 && kW <= 200){
+       custo = kW * 0.75;
+    }else if (kW > 200 && kW <=250){
+        custo = kW * 1,20;
+    }else{
+        custo = kW * 1.50;
+    }
+      custoFinal =custo+( custo * 0.2);
+    return 0;
+}
+
+void alertaPoluicao(float indice){
+
+    if(indice >= 0.05 && indice <= 0.25){
+        cout<<"poluição aceitável estabelecido"<<endl;
+    }else if(indice >= 0.3 && indice < 0.4){
+        cout<<"Alerta - Primeiro Grupo: suspendam imediatamente suas atividades, como uma medida preventiva para reduzir a poluição"<<endl;
+    }else if(indice >= 0.4 && indice < 0.5){
+        cout<<"Alerta - Primeiro e Segundo Grupo:  interromper suas operações, intensificando as ações para a diminuição dos níveis de poluição"<<endl;
+    }else if(indice >= 0.5 ){
+        cout<<"Alerta - Os tres Grupos: parar suas atividades, visando a recuperação da qualidade ambiental."<< endl;
+    }
+}
+
+
+float verificSaldo(float saldo){
+    float resultado;
+    if(saldo >=0 && saldo <=200){
+        resultado = saldo;
+    }else if (saldo >200 && saldo <= 400){
+        resultado = saldo + (saldo *0.2);
+    }else if(saldo > 400 && saldo <=600){
+        resultado = saldo + (saldo * 0.3);
+    }else {
+        resultado = saldo + (saldo * 0.4);
+    }
+    return resultado;
+}
+ 
 
 
 int main() {
-    int a, b,c;
-    cout<<"Informe o angulo a : ";
-    cin>>a;
-    cout<<"Informe o angulo b : ";
-    cin>>b;
-    cout<<"Informe o angulo c :";
-    cin>>c;
+    float saldo;
+    cout<< "Informe o seu saldo do banco : ";
+    cin>>saldo;
+    cout<<"Saldo e + credito : "<< verificSaldo(saldo);
+
+
+
+
+
+   // float indice;
+    //cout<<"Informe o indice de poluiçao: "<<endl;
+    //cin>>indice;
+    //alertaPoluicao(indice);
+
+    //float kw;
+   // cout<<"Informe o valor de kW :";
+   // cin>> kw;
+   // cout<< "O custo final de energia eh: "<<precoLuz(kw);
     
-    int resp =soma_angulos(a,b,c);
-    if(checarValid(resp));
+    //int a, b,c;
+    //cout<<"Informe o angulo a : ";
+    //cin>>a;
+    //cout<<"Informe o angulo b : ";
+    //cin>>b;
+    //cout<<"Informe o angulo c :";
+    //cin>>c;
+    
+    //int resp =soma_angulos(a,b,c);
+    //if(checarValid(resp));
     
     
     
