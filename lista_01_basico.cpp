@@ -1,6 +1,65 @@
 #include <iostream>
 using namespace std;
 
+// (a) Sub-rotina que calcula fatorial
+int fatorial(int n) {
+    if (n < 0 || n > 12) {
+        return 0;
+    }
+    int resultado = 1;
+    for (int i = 1; i <= n; i++) {
+        resultado *= i;
+    }
+    return resultado;
+}
+
+// (b) Sub-rotina que preenche vetor com fatorial(i + 2)
+void preencherVetorComFatoriais(int v[], int tamanho) {
+    for (int i = 0; i < tamanho; i++) {
+        v[i] = fatorial(i + 2);
+    }
+}
+
+// (c) Função principal
+int main() {
+    int n;
+
+    cout << "Digite o tamanho do vetor: ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Tamanho inválido. Encerrando." << endl;
+        return 0;
+    }
+
+    int* v = new int[n];
+
+    // Preenche o vetor usando a sub-rotina (b)
+    preencherVetorComFatoriais(v, n);
+
+    // Loop para ler índices do usuário
+    int indice;
+    while (true) {
+        cout << "Digite um índice (0 a " << n - 1 << "): ";
+        cin >> indice;
+
+        if (indice < 0 || indice >= n) {
+            // Índice inválido: encerra
+            int soma = v[0] + v[n - 1];
+            cout << "Índice fora do intervalo." << endl;
+            cout << "Soma do primeiro e último elemento: " << soma << endl;
+            break;
+        } else {
+            cout << "Valor no índice " << indice << ": " << v[indice] << endl;
+        }
+    }
+
+    delete[] v;
+    return 0;
+}
+#include <iostream>
+using namespace std;
+
 float soma(float a, float b) {
     return a + b;
 }
